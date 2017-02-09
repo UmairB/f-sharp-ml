@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineLearning.DigitRecognizer.CSharp", "DigitRecognizer\MachineLearning.DigitRecognizer.CSharp\MachineLearning.DigitRecognizer.CSharp.csproj", "{E4E7A508-70B6-42C8-B90B-991248FAA5C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DigitRecognizer", "DigitRecognizer", "{F4A64D81-7D52-4CF6-8570-9EF4C49EF32C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{C5F06490-2E47-457D-9839-5C8013D1C6EF}"
+	ProjectSection(SolutionItems) = preProject
+		DigitRecognizer\Data\trainingsample.csv = DigitRecognizer\Data\trainingsample.csv
+		DigitRecognizer\Data\validationsample.csv = DigitRecognizer\Data\validationsample.csv
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MachineLearning.DigitRecognizer.FSharp", "DigitRecognizer\MachineLearning.DigitRecognizer.FSharp\MachineLearning.DigitRecognizer.FSharp.fsproj", "{C80641C8-3F08-4CDA-8F31-12AA2F7AC2EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E4E7A508-70B6-42C8-B90B-991248FAA5C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4E7A508-70B6-42C8-B90B-991248FAA5C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4E7A508-70B6-42C8-B90B-991248FAA5C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4E7A508-70B6-42C8-B90B-991248FAA5C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C80641C8-3F08-4CDA-8F31-12AA2F7AC2EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C80641C8-3F08-4CDA-8F31-12AA2F7AC2EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C80641C8-3F08-4CDA-8F31-12AA2F7AC2EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C80641C8-3F08-4CDA-8F31-12AA2F7AC2EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E4E7A508-70B6-42C8-B90B-991248FAA5C4} = {F4A64D81-7D52-4CF6-8570-9EF4C49EF32C}
+		{C5F06490-2E47-457D-9839-5C8013D1C6EF} = {F4A64D81-7D52-4CF6-8570-9EF4C49EF32C}
+		{C80641C8-3F08-4CDA-8F31-12AA2F7AC2EA} = {F4A64D81-7D52-4CF6-8570-9EF4C49EF32C}
+	EndGlobalSection
+EndGlobal
