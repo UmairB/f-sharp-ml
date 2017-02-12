@@ -15,6 +15,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{C5F06490-2
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MachineLearning.DigitRecognizer.FSharp", "DigitRecognizer\MachineLearning.DigitRecognizer.FSharp\MachineLearning.DigitRecognizer.FSharp.fsproj", "{C80641C8-3F08-4CDA-8F31-12AA2F7AC2EA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SpamOrHam", "SpamOrHam", "{30B5F121-6C18-4D7C-8A36-F9AB290110B2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{03BABCBC-221B-4CAB-B6A6-381035022FCD}"
+	ProjectSection(SolutionItems) = preProject
+		SpamOrHam\Data\SMSSpamCollection = SpamOrHam\Data\SMSSpamCollection
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MachineLearning.SpamOrHam", "SpamOrHam\MachineLearning.SpamOrHam\MachineLearning.SpamOrHam.fsproj", "{D9073CC8-E27B-4FD6-9D11-29F54BF14FDD}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MachineLearning.SpamOrHam.Tests", "SpamOrHam\MachineLearning.SpamOrHam.Tests\MachineLearning.SpamOrHam.Tests.fsproj", "{ADD77AC9-BACB-42B1-99B8-8A9E9DFAD9CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +40,14 @@ Global
 		{C80641C8-3F08-4CDA-8F31-12AA2F7AC2EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C80641C8-3F08-4CDA-8F31-12AA2F7AC2EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C80641C8-3F08-4CDA-8F31-12AA2F7AC2EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9073CC8-E27B-4FD6-9D11-29F54BF14FDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9073CC8-E27B-4FD6-9D11-29F54BF14FDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9073CC8-E27B-4FD6-9D11-29F54BF14FDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9073CC8-E27B-4FD6-9D11-29F54BF14FDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADD77AC9-BACB-42B1-99B8-8A9E9DFAD9CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADD77AC9-BACB-42B1-99B8-8A9E9DFAD9CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADD77AC9-BACB-42B1-99B8-8A9E9DFAD9CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADD77AC9-BACB-42B1-99B8-8A9E9DFAD9CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -37,5 +56,8 @@ Global
 		{E4E7A508-70B6-42C8-B90B-991248FAA5C4} = {F4A64D81-7D52-4CF6-8570-9EF4C49EF32C}
 		{C5F06490-2E47-457D-9839-5C8013D1C6EF} = {F4A64D81-7D52-4CF6-8570-9EF4C49EF32C}
 		{C80641C8-3F08-4CDA-8F31-12AA2F7AC2EA} = {F4A64D81-7D52-4CF6-8570-9EF4C49EF32C}
+		{03BABCBC-221B-4CAB-B6A6-381035022FCD} = {30B5F121-6C18-4D7C-8A36-F9AB290110B2}
+		{D9073CC8-E27B-4FD6-9D11-29F54BF14FDD} = {30B5F121-6C18-4D7C-8A36-F9AB290110B2}
+		{ADD77AC9-BACB-42B1-99B8-8A9E9DFAD9CC} = {30B5F121-6C18-4D7C-8A36-F9AB290110B2}
 	EndGlobalSection
 EndGlobal
