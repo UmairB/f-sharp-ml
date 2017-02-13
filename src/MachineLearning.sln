@@ -26,6 +26,10 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MachineLearning.SpamOrHam",
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MachineLearning.SpamOrHam.Tests", "SpamOrHam\MachineLearning.SpamOrHam.Tests\MachineLearning.SpamOrHam.Tests.fsproj", "{ADD77AC9-BACB-42B1-99B8-8A9E9DFAD9CC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TypeProviders", "TypeProviders", "{22EC94B8-8E51-41CF-B5D8-49623C52A09E}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MachineLearning.TypeProviders", "TypeProviders\MachineLearning.TypeProviders\MachineLearning.TypeProviders.fsproj", "{3D4A5CC6-746F-4F6B-8F9E-54635F5BAB32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +52,10 @@ Global
 		{ADD77AC9-BACB-42B1-99B8-8A9E9DFAD9CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADD77AC9-BACB-42B1-99B8-8A9E9DFAD9CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADD77AC9-BACB-42B1-99B8-8A9E9DFAD9CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D4A5CC6-746F-4F6B-8F9E-54635F5BAB32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D4A5CC6-746F-4F6B-8F9E-54635F5BAB32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D4A5CC6-746F-4F6B-8F9E-54635F5BAB32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D4A5CC6-746F-4F6B-8F9E-54635F5BAB32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,5 +67,6 @@ Global
 		{03BABCBC-221B-4CAB-B6A6-381035022FCD} = {30B5F121-6C18-4D7C-8A36-F9AB290110B2}
 		{D9073CC8-E27B-4FD6-9D11-29F54BF14FDD} = {30B5F121-6C18-4D7C-8A36-F9AB290110B2}
 		{ADD77AC9-BACB-42B1-99B8-8A9E9DFAD9CC} = {30B5F121-6C18-4D7C-8A36-F9AB290110B2}
+		{3D4A5CC6-746F-4F6B-8F9E-54635F5BAB32} = {22EC94B8-8E51-41CF-B5D8-49623C52A09E}
 	EndGlobalSection
 EndGlobal
