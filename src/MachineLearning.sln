@@ -30,6 +30,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TypeProviders", "TypeProvid
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MachineLearning.TypeProviders", "TypeProviders\MachineLearning.TypeProviders\MachineLearning.TypeProviders.fsproj", "{3D4A5CC6-746F-4F6B-8F9E-54635F5BAB32}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BikeSharing", "BikeSharing", "{DBE8A910-E2C4-44F7-887D-4B1C2FFE28F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{C6FC2570-8BEC-42DB-A831-235DBE94DEFD}"
+	ProjectSection(SolutionItems) = preProject
+		BikeSharing\Data\day.csv = BikeSharing\Data\day.csv
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MachineLearning.BikeSharing", "BikeSharing\MachineLearning.BikeSharing\MachineLearning.BikeSharing.fsproj", "{B9175BD4-6048-4FCD-B0A0-9FD7FE1A18DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +65,10 @@ Global
 		{3D4A5CC6-746F-4F6B-8F9E-54635F5BAB32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D4A5CC6-746F-4F6B-8F9E-54635F5BAB32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D4A5CC6-746F-4F6B-8F9E-54635F5BAB32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9175BD4-6048-4FCD-B0A0-9FD7FE1A18DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9175BD4-6048-4FCD-B0A0-9FD7FE1A18DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9175BD4-6048-4FCD-B0A0-9FD7FE1A18DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9175BD4-6048-4FCD-B0A0-9FD7FE1A18DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,5 +81,7 @@ Global
 		{D9073CC8-E27B-4FD6-9D11-29F54BF14FDD} = {30B5F121-6C18-4D7C-8A36-F9AB290110B2}
 		{ADD77AC9-BACB-42B1-99B8-8A9E9DFAD9CC} = {30B5F121-6C18-4D7C-8A36-F9AB290110B2}
 		{3D4A5CC6-746F-4F6B-8F9E-54635F5BAB32} = {22EC94B8-8E51-41CF-B5D8-49623C52A09E}
+		{C6FC2570-8BEC-42DB-A831-235DBE94DEFD} = {DBE8A910-E2C4-44F7-887D-4B1C2FFE28F8}
+		{B9175BD4-6048-4FCD-B0A0-9FD7FE1A18DD} = {DBE8A910-E2C4-44F7-887D-4B1C2FFE28F8}
 	EndGlobalSection
 EndGlobal
