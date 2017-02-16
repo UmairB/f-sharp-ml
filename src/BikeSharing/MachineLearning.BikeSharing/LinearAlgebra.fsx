@@ -99,8 +99,7 @@ let model (f:Featurizer) (data:Obs seq) =
 let featurizer0 (obs:Obs) =
     [ 1.0; float obs.Instant; ]
 
-let (theta0, model0) = model featurizer0 training
-
+let theta0, model0 = model featurizer0 training
 evaluate model0 training |> printfn "Training: %.0f"
 evaluate model0 validation |> printfn "Validation: %.0f"
 
@@ -118,7 +117,7 @@ let featurizer1 (obs:Obs) =
         float obs.Windspeed
     ]
 
-let (theta1, model1) = model featurizer1 training
+let theta1, model1 = model featurizer1 training
 evaluate model1 training |> printfn "Training: %.0f"
 evaluate model1 validation |> printfn "Validation: %.0f"
 
@@ -129,3 +128,63 @@ Chart.Combine [
 ]
 
 Chart.Point [ for obs in data -> float obs.Cnt, model1 obs ]
+
+let featurizer2 (obs: Obs) =
+    [
+        1.
+        float obs.Instant
+        float obs.Hum
+        float obs.Temp
+        float obs.Windspeed
+        //(if obs.Weekday = 0 then 1.0 else 0.0)
+        (if obs.Weekday = 1 then 1.0 else 0.0)
+        (if obs.Weekday = 2 then 1.0 else 0.0)
+        (if obs.Weekday = 3 then 1.0 else 0.0)
+        (if obs.Weekday = 4 then 1.0 else 0.0)
+        (if obs.Weekday = 5 then 1.0 else 0.0)
+        (if obs.Weekday = 6 then 1.0 else 0.0)
+    ]
+
+let theta2, model2 = model featurizer2 training
+evaluate model2 training |> printfn "Training: %.0f"
+evaluate model2 validation |> printfn "Validation: %.0f"
+
+Chart.Point [ for obs in data -> float obs.Cnt, model2 obs ]
+
+// non-linear features
+Chart.Point [ for obs in data -> obs.Temp, obs.Cnt ]
+
+// obs.Cnt = theta0 + theta1*obs.Temp + theta2*obs.Temp^2
+let squareTempFeaturizer (obs:Obs) =
+    [   1.
+        obs.Temp |> float
+        obs.Temp * obs.Temp |> float ]
+
+let _, squareTempModel = model squareTempFeaturizer data
+
+Chart.Combine [
+    Chart.Point [ for obs in data -> obs.Temp, obs.Cnt ]
+    Chart.Point [ for obs in data -> obs.Temp, squareTempModel obs ] ]
+
+let featurizer3 (obs: Obs) =
+    [
+        1.
+        float obs.Instant
+        float obs.Hum
+        float obs.Temp
+        float obs.Windspeed
+        obs.Temp * obs.Temp |> float
+        //(if obs.Weekday = 0 then 1.0 else 0.0)
+        (if obs.Weekday = 1 then 1.0 else 0.0)
+        (if obs.Weekday = 2 then 1.0 else 0.0)
+        (if obs.Weekday = 3 then 1.0 else 0.0)
+        (if obs.Weekday = 4 then 1.0 else 0.0)
+        (if obs.Weekday = 5 then 1.0 else 0.0)
+        (if obs.Weekday = 6 then 1.0 else 0.0)
+    ]
+
+let theta3, model3 = model featurizer3 training
+evaluate model3 training |> printfn "Training: %.0f"
+evaluate model3 validation |> printfn "Validation: %.0f"
+
+Chart.Point [ for obs in data -> float obs.Cnt, model3 obs ]
