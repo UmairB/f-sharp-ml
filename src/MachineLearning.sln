@@ -39,6 +39,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{C6FC2570-8
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MachineLearning.BikeSharing", "BikeSharing\MachineLearning.BikeSharing\MachineLearning.BikeSharing.fsproj", "{B9175BD4-6048-4FCD-B0A0-9FD7FE1A18DD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unsupervised", "Unsupervised", "{45D17CB3-FA40-4D88-8702-C6CC776201A5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{4D84B9A9-7BE5-4482-AC8F-382F70010027}"
+	ProjectSection(SolutionItems) = preProject
+		Unsupervised\Data\userprofiles-toptags.txt = Unsupervised\Data\userprofiles-toptags.txt
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MachineLearning.Unsupervised", "Unsupervised\MachineLearning.Unsupervised\MachineLearning.Unsupervised.fsproj", "{E2361944-BC9A-4405-83F6-C70EFBBE5D09}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +78,10 @@ Global
 		{B9175BD4-6048-4FCD-B0A0-9FD7FE1A18DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9175BD4-6048-4FCD-B0A0-9FD7FE1A18DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9175BD4-6048-4FCD-B0A0-9FD7FE1A18DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2361944-BC9A-4405-83F6-C70EFBBE5D09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2361944-BC9A-4405-83F6-C70EFBBE5D09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2361944-BC9A-4405-83F6-C70EFBBE5D09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2361944-BC9A-4405-83F6-C70EFBBE5D09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,5 +96,7 @@ Global
 		{3D4A5CC6-746F-4F6B-8F9E-54635F5BAB32} = {22EC94B8-8E51-41CF-B5D8-49623C52A09E}
 		{C6FC2570-8BEC-42DB-A831-235DBE94DEFD} = {DBE8A910-E2C4-44F7-887D-4B1C2FFE28F8}
 		{B9175BD4-6048-4FCD-B0A0-9FD7FE1A18DD} = {DBE8A910-E2C4-44F7-887D-4B1C2FFE28F8}
+		{4D84B9A9-7BE5-4482-AC8F-382F70010027} = {45D17CB3-FA40-4D88-8702-C6CC776201A5}
+		{E2361944-BC9A-4405-83F6-C70EFBBE5D09} = {45D17CB3-FA40-4D88-8702-C6CC776201A5}
 	EndGlobalSection
 EndGlobal
