@@ -48,6 +48,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{4D84B9A9-7
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MachineLearning.Unsupervised", "Unsupervised\MachineLearning.Unsupervised\MachineLearning.Unsupervised.fsproj", "{E2361944-BC9A-4405-83F6-C70EFBBE5D09}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TreesAndForests", "TreesAndForests", "{AA0533EC-7032-4161-9B9F-2A40E08F69B5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{6A061A47-873E-4EA4-9B01-E8675E3E7CD4}"
+	ProjectSection(SolutionItems) = preProject
+		TreesAndForests\Data\titanic.csv = TreesAndForests\Data\titanic.csv
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Titanic", "TreesAndForests\Titanic\Titanic.fsproj", "{5FDC5EA2-03E9-4BB2-BDC9-688ABC3F966B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -82,6 +91,10 @@ Global
 		{E2361944-BC9A-4405-83F6-C70EFBBE5D09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2361944-BC9A-4405-83F6-C70EFBBE5D09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2361944-BC9A-4405-83F6-C70EFBBE5D09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FDC5EA2-03E9-4BB2-BDC9-688ABC3F966B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FDC5EA2-03E9-4BB2-BDC9-688ABC3F966B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FDC5EA2-03E9-4BB2-BDC9-688ABC3F966B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FDC5EA2-03E9-4BB2-BDC9-688ABC3F966B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -98,5 +111,7 @@ Global
 		{B9175BD4-6048-4FCD-B0A0-9FD7FE1A18DD} = {DBE8A910-E2C4-44F7-887D-4B1C2FFE28F8}
 		{4D84B9A9-7BE5-4482-AC8F-382F70010027} = {45D17CB3-FA40-4D88-8702-C6CC776201A5}
 		{E2361944-BC9A-4405-83F6-C70EFBBE5D09} = {45D17CB3-FA40-4D88-8702-C6CC776201A5}
+		{6A061A47-873E-4EA4-9B01-E8675E3E7CD4} = {AA0533EC-7032-4161-9B9F-2A40E08F69B5}
+		{5FDC5EA2-03E9-4BB2-BDC9-688ABC3F966B} = {AA0533EC-7032-4161-9B9F-2A40E08F69B5}
 	EndGlobalSection
 EndGlobal
