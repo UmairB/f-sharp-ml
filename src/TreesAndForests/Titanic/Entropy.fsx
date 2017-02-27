@@ -84,3 +84,14 @@ features
 |> List.map (fun (name, feat) ->
     dataset.Rows
     |> splitEntropy survived feat |> printfn "%s: %.3f" name)
+
+// using entropy to find the best age split
+let ages = dataset.Rows |> Seq.map (fun p -> p.Age) |> Seq.distinct
+let best =
+    ages
+    |> Seq.minBy (fun age ->
+        let age (p:Passenger) =
+            if p.Age < age then Some("Younger") else Some("Older")
+        dataset.Rows |> splitEntropy survived age)
+printfn "Best age split"
+printfn "Age: %.3f" best
