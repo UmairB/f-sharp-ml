@@ -57,6 +57,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{6A061A47-8
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Titanic", "TreesAndForests\Titanic\Titanic.fsproj", "{5FDC5EA2-03E9-4BB2-BDC9-688ABC3F966B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReinforcementLearning", "ReinforcementLearning", "{7EE020E1-A61F-4E91-97D1-3A7DB3D96AE4}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SimpleGame", "ReinforcementLearning\SimpleGame\SimpleGame.fsproj", "{EA1EB400-8E95-4530-BD74-F75117BAAA60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +99,10 @@ Global
 		{5FDC5EA2-03E9-4BB2-BDC9-688ABC3F966B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FDC5EA2-03E9-4BB2-BDC9-688ABC3F966B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FDC5EA2-03E9-4BB2-BDC9-688ABC3F966B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA1EB400-8E95-4530-BD74-F75117BAAA60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA1EB400-8E95-4530-BD74-F75117BAAA60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA1EB400-8E95-4530-BD74-F75117BAAA60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA1EB400-8E95-4530-BD74-F75117BAAA60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -113,5 +121,6 @@ Global
 		{E2361944-BC9A-4405-83F6-C70EFBBE5D09} = {45D17CB3-FA40-4D88-8702-C6CC776201A5}
 		{6A061A47-873E-4EA4-9B01-E8675E3E7CD4} = {AA0533EC-7032-4161-9B9F-2A40E08F69B5}
 		{5FDC5EA2-03E9-4BB2-BDC9-688ABC3F966B} = {AA0533EC-7032-4161-9B9F-2A40E08F69B5}
+		{EA1EB400-8E95-4530-BD74-F75117BAAA60} = {7EE020E1-A61F-4E91-97D1-3A7DB3D96AE4}
 	EndGlobalSection
 EndGlobal
