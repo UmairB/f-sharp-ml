@@ -50,7 +50,7 @@ module Program =
 
             let updated = { Board = board; Hero = player; Score = score }
 
-            Thread.Sleep 20
+            Thread.Sleep 200
             loop (updated)
 
         // start the game
