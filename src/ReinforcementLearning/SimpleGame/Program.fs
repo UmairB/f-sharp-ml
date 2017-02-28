@@ -43,7 +43,10 @@ module Program =
             let score = state.Score + gain
 
             // world rendering
-            printfn "%i" score
+            //printfn "%i" score
+            renderScore score
+            renderPlayer state.Hero player
+            renderBoard state.Board board
 
             let updated = { Board = board; Hero = player; Score = score }
 

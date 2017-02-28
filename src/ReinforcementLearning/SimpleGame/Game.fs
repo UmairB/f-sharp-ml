@@ -39,7 +39,7 @@ module Game =
         | North -> { pos with Top = (pos.Top - 1) %%% size.Height }
         | South -> { pos with Top = (pos.Top + 1) %%% size.Height }
         | West -> { pos with Left = (pos.Left - 1) %%% size.Width }
-        | East -> { pos with Top = (pos.Left + 1) %%% size.Width }
+        | East -> { pos with Left = (pos.Left + 1) %%% size.Width }
 
     let takeDirection (act:Act) (dir:Dir) =
         match act with
@@ -78,4 +78,3 @@ module Game =
         let currentPosition = player.Position
         board
         |> Map.filter (fun position _ -> position <> currentPosition)
-
