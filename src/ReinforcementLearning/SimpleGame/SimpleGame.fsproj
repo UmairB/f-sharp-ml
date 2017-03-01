@@ -49,8 +49,10 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Game.fs" />
+    <Compile Include="Brains.fs" />
     <Compile Include="Rendering.fs" />
     <Compile Include="Program.fs" />
+    <None Include="Headless.fsx" />
     <None Include="Test.fsx" />
     <None Include="App.config" />
   </ItemGroup>
