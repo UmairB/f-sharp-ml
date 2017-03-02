@@ -6,4 +6,5 @@ obj/
 [Tt]est[Rr]esult*
 [Bb]uild[Ll]og.*
 .DS_Store
+.suo
 packages/

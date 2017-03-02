@@ -61,6 +61,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReinforcementLearning", "Re
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SimpleGame", "ReinforcementLearning\SimpleGame\SimpleGame.fsproj", "{EA1EB400-8E95-4530-BD74-F75117BAAA60}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SimpleGame2.0", "ReinforcementLearning\SimpleGame2.0\SimpleGame2.0.fsproj", "{062AF871-245D-454F-AC1A-0C6A2F9C24A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +105,10 @@ Global
 		{EA1EB400-8E95-4530-BD74-F75117BAAA60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA1EB400-8E95-4530-BD74-F75117BAAA60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA1EB400-8E95-4530-BD74-F75117BAAA60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{062AF871-245D-454F-AC1A-0C6A2F9C24A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{062AF871-245D-454F-AC1A-0C6A2F9C24A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{062AF871-245D-454F-AC1A-0C6A2F9C24A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{062AF871-245D-454F-AC1A-0C6A2F9C24A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -122,5 +128,6 @@ Global
 		{6A061A47-873E-4EA4-9B01-E8675E3E7CD4} = {AA0533EC-7032-4161-9B9F-2A40E08F69B5}
 		{5FDC5EA2-03E9-4BB2-BDC9-688ABC3F966B} = {AA0533EC-7032-4161-9B9F-2A40E08F69B5}
 		{EA1EB400-8E95-4530-BD74-F75117BAAA60} = {7EE020E1-A61F-4E91-97D1-3A7DB3D96AE4}
+		{062AF871-245D-454F-AC1A-0C6A2F9C24A9} = {7EE020E1-A61F-4E91-97D1-3A7DB3D96AE4}
 	EndGlobalSection
 EndGlobal
