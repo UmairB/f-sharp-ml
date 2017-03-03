@@ -6,7 +6,7 @@ open Game
 module Brains =
 
     // my current direction and surrounding cells
-    type State = Dir * int list
+    type State = int list
 
     type Experience = {
         State: State; // where I was
@@ -27,28 +27,44 @@ module Brains =
     let randomDecide () = choices.[rng.Next(3)]
 
     let private alpha = 0.2 // learning rate
+    let private gamma = 0.5 // discount rate
+    let private epsilon = 0.05 // random learning
+
+    let nextValue (brain:Brain) (state:State) =
+        choices 
+        |> Seq.map (fun act ->
+            match brain.TryFind { State = state; Action = act } with
+            | Some(value) -> value
+            | None -> -0.)
+        |> Seq.max
+
     let learn (brain:Brain) (exp:Experience) =
         let strat = { State = exp.State; Action = exp.Action }
+        let vNext = nextValue brain exp.NextState
         match brain.TryFind strat with
         | Some(value) ->
-            brain.Add (strat, (1.0-alpha) * value + alpha * exp.Reward)
-        | None -> brain.Add (strat, (alpha * exp.Reward))
+            let value' = (1.0-alpha) * value + alpha * (exp.Reward + gamma * vNext)
+            brain.Add (strat, value')
+        | None -> brain.Add (strat, alpha * (exp.Reward + gamma * vNext))
 
     let decide (brain:Brain) (state:State) =
-        let knownStrategies =
-            choices
-            |> Array.map (fun alt -> { State = state; Action = alt })
-            |> Array.filter brain.ContainsKey
+        if (rng.NextDouble () < epsilon)
+        then randomDecide ()
+        else
+            let knownStrategies =
+                choices
+                |> Array.map (fun alt -> { State = state; Action = alt })
+                |> Array.filter brain.ContainsKey
 
-        match knownStrategies.Length with
-        | 0 -> randomDecide ()
-        | _ ->
-            choices
-            |> Seq.maxBy (fun alt ->
-                let strat = { State = state; Action = alt }
-                match brain.TryFind strat with
-                | Some(value) -> value
-                | None -> 0.0)
+            match knownStrategies.Length with
+            | 0 -> randomDecide ()
+            | _ ->
+                choices
+                |> Seq.maxBy (fun alt ->
+                    let strat = { State = state; Action = alt }
+                    match brain.TryFind strat with
+                    | Some(value) -> value
+                    | None -> 0.0)
 
     let tileAt (board:Board) (pos:Pos) = board.[pos.Left,pos.Top]
 
@@ -61,12 +77,18 @@ module Brains =
           (1,-1)
           (1,0)
           (1,1) ]
+
+    let rotate dir (x,y) =
+        match dir with
+        | North -> (x,y)
+        | South -> (-x,-y)
+        | West -> (-y,x)
+        | East -> (y,-x)
     
     let visibleState (size:Size) (board:Board) (hero:Hero) =
         let (dir,pos) = hero.Direction, hero.Position
-        let visibleCells =
-            offsets
-            |> List.map (fun (x,y) ->
-                onboard size { Top = pos.Top + x; Left = pos.Left + y }
-                |> tileAt board)
-        (dir,visibleCells)
+        offsets
+        |> List.map (rotate dir)
+        |> List.map (fun (x,y) ->
+            onboard size { Top = pos.Top + x; Left = pos.Left + y }
+            |> tileAt board)

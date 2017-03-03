@@ -49,9 +49,9 @@ let simulate (decide:Brain -> State -> Act) iters runs =
 
 // Simulating different brains
 printfn "Random decision"
-let random = simulate (fun _ _ -> randomDecide ()) 500 20
+let random = simulate (fun _ _ -> randomDecide ()) 100000 20
 printfn "Average score: %.0f" (random |> Seq.averageBy float)
 
-printfn "Crude brain"
-let crudeBrain = simulate SimpleGame.Brains.decide 500 20
-printfn "Average score: %.0f" (crudeBrain |> Seq.averageBy float)
+printfn "Brain"
+let brain = simulate SimpleGame.Brains.decide 100000 20
+printfn "Average score: %.0f" (brain |> Seq.averageBy float)
