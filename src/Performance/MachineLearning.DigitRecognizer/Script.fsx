@@ -24,6 +24,10 @@ let euclideanDistance (pixelsOne, pixelsTwo) =
    |> Array.map(fun (x, y) -> pown (x-y) 2)
    |> Array.sum
 
+let d1 (pixelsOne, pixelsTwo) =
+    Seq.zip pixelsOne pixelsTwo
+    |> Seq.sumBy (fun (x, y) -> pown (x-y) 2)
+
 let d2 (pixels1, pixels2) =
    (pixels1, pixels2) // using map2 instead of zip + map
    ||> Array.map2(fun x y -> (x-y) * (x-y)) // remove pown
@@ -63,15 +67,39 @@ let evaluate data classifier =
     |> Array.averageBy(fun x -> if classifier x.Pixels = x.Label then 1. else 0.)
     |> printfn "Correct: %.3f"
 
+let parallelEvaluate data classifier =
+    data
+    |> Array.Parallel.map (fun x -> if classifier x.Pixels = x.Label then 1. else 0.)
+    |> Array.average
+    |> printfn "Correct: %.3f"
+
 let euclideanModel = train training euclideanDistance
 
+// distance function optimizations
 let img1 = training.[0].Pixels
 let img2 = training.[1].Pixels
 
 #time "on"
 
 for i in 1 .. 1000000 do
-    let dist = d4 (img1, img2)
+    let dist = d1 (img1, img2)
     ignore ()
 
 #time "off"
+
+// evaluation function optimizations
+#time "on"
+// original
+evaluate validation euclideanModel
+#time "off"
+
+#time "on"
+// using improved distance function
+let updatedModel = train training d4
+evaluate validation updatedModel
+#time "off"
+
+#time "on"
+parallelEvaluate validation updatedModel
+#time "off"
+
