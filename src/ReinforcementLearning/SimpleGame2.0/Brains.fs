@@ -6,7 +6,7 @@ open Game
 module Brains =
 
     // my current direction and surrounding cells
-    type State = Dir * (Cell option) list
+    type State = Dir * int list
 
     type Experience = {
         State: State; // where I was
@@ -50,7 +50,7 @@ module Brains =
                 | Some(value) -> value
                 | None -> 0.0)
 
-    let tileAt (board:Board) (pos:Pos) = board.TryFind pos
+    let tileAt (board:Board) (pos:Pos) = board.[pos.Left,pos.Top]
 
     let offsets = 
         [ (-1,1)

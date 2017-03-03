@@ -1,5 +1,7 @@
 ﻿namespace SimpleGame
 
+open System
+
 module Game =
     type Dir =
         | North
@@ -20,7 +22,7 @@ module Game =
         | Treasure
         | Trap
 
-    type Board = Map<Pos,Cell>
+    type Board = int[,]
 
     type GameState = { Board:Board; Hero:Hero; Score:int; }
 
@@ -64,17 +66,16 @@ module Game =
 
     let treasureScore = 100
     let trapScore = -100
+    let tileValues = [| -100; -50; 50; 100 |]
 
     let computeGain (board:Board) (hero:Hero) =
-        let currentPosition = hero.Position
-        match board.TryFind currentPosition with
-        | Some(cell) ->
-            match cell with
-            | Treasure -> treasureScore
-            | Trap -> trapScore
-        | None -> 0
+        let pos = hero.Position
+        let cellType = board.[pos.Left,pos.Top]
+        tileValues.[cellType]
 
+    let rng = Random ()
     let updateBoard (board:Board) (player:Hero) =
-        let currentPosition = player.Position
-        board
-        |> Map.filter (fun position _ -> position <> currentPosition)
+        let pos = player.Position
+        let updatedBoard = board |> Array2D.copy
+        updatedBoard.[pos.Left,pos.Top] <- rng.Next(tileValues.Length)
+        updatedBoard

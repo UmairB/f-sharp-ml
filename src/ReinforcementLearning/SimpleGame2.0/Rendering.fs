@@ -4,30 +4,43 @@ open System
 open Game
 
 module Rendering = 
-    let offset (pos:Pos) = (pos.Left, pos.Top + 2)
-    let writeAt (left,top) color (txt:string) = 
-        Console.ForegroundColor <- color
-        Console.SetCursorPosition (left,top)
-        Console.Write txt
+    let colors = 
+        [|
+            ConsoleColor.DarkRed
+            ConsoleColor.Red
+            ConsoleColor.DarkYellow
+            ConsoleColor.Yellow
+        |]
 
-    let prepareDisplay size =
+    let creatureColor = ConsoleColor.White
+
+    let offset (pos:Pos) = (pos.Left, pos.Top+2)
+
+    let prepareDisplay size gameState =
         Console.SetWindowSize(size.Width, size.Height+2)
+        let board = gameState.Board
+        for x in 0 .. (size.Width - 1) do
+            for y in 0 .. (size.Height - 1) do
+                let pos = { Left = x; Top = y }
+                Console.SetCursorPosition (offset pos)
+                let tileType = board.[x,y]
+                Console.ForegroundColor <- colors.[tileType]
+                Console.Write("█")
 
-    let renderPlayer (before:Hero) (after:Hero) =
-        writeAt (offset (before.Position)) ConsoleColor.Black "█"
-        writeAt (offset (after.Position)) ConsoleColor.Yellow "█"
+    let render (before:GameState) (after:GameState) =
+        let oldPos = before.Hero.Position
+        let newPos = after.Hero.Position
+        // previous player position
+        Console.SetCursorPosition (offset oldPos)
+        let tileType = after.Board.[oldPos.Left,oldPos.Top]
+        Console.ForegroundColor <- colors.[tileType]
+        Console.Write("█")
+        // current player position
+        Console.SetCursorPosition (offset newPos)
+        Console.ForegroundColor <- creatureColor
+        Console.Write("█")
 
-    let renderBoard (before:Board) (after:Board) =
-        after
-        |> Map.iter (fun pos item -> 
-            if (before |> Map.containsKey pos)
-            then
-                match item with
-                | Treasure -> 
-                    writeAt (offset pos) ConsoleColor.Blue "@"
-                | Trap -> 
-                    writeAt (offset pos) ConsoleColor.Red "+"
-            else writeAt (offset pos) ConsoleColor.Black " ") 
-
-    let renderScore score = 
-        writeAt (0,0) ConsoleColor.White (sprintf "Score: %i   " score)
+    let renderScore score =
+        Console.SetCursorPosition (0,0)
+        Console.ForegroundColor <- ConsoleColor.White
+        printfn "Score: %i  " score
