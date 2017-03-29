@@ -93,13 +93,12 @@ for i in 1 .. 1000000 do
 evaluate validation euclideanModel
 #time "off"
 
-#time "on"
 // using improved distance function
 let updatedModel = train training d4
+#time "on"
 evaluate validation updatedModel
 #time "off"
 
 #time "on"
 parallelEvaluate validation updatedModel
 #time "off"
-
